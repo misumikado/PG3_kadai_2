@@ -1,21 +1,16 @@
-#include "Enemy.h"
-#include <stdio.h>
+#include "Circle.h"
+#include "Rectangle.h"
 
 int main()
 {
-	Enemy* enemy = new Enemy();
-	int input;
+	Circle circle;
+	Rectangle rectangle;
 
-	while (true)
-	{
-		printf("0:exit 1:continue ==>");
-		scanf_s("%d", &input);
-		if (input == 0)break;
+	circle.Size();
+	circle.Draw();
 
-		enemy->Update();
-		enemy->Draw();
-	}
-	delete enemy;
+	rectangle.Size();
+	rectangle.Draw();
 
 	return 0;
 }
