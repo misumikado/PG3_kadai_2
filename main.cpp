@@ -1,29 +1,21 @@
 #include "Enemy.h"
-
-bool Enemy::isAlive_ = true;
+#include <stdio.h>
 
 int main()
 {
-	std::array<Enemy, 5> enemy{};
-	// “Gó‘Ô‚ğ•\¦
-	for (int i = 0; i < enemy.size(); i++)
+	Enemy* enemy = new Enemy();
+	int input;
+
+	while (true)
 	{
-		printf("\n“G%d:", i);
+		printf("0:exit 1:continue ==>");
+		scanf_s("%d", &input);
+		if (input == 0)break;
 
-		enemy[i].Print();
+		enemy->Update();
+		enemy->Draw();
 	}
-
-	enemy[4].SetAlive(false);
-
-	printf("\n“G4‚ğ“|‚µ‚Ü‚µ‚½\n");
-
-	// “Gó‘Ô‚ğÄ•\¦
-	for (int i = 0; i < enemy.size(); i++)
-	{
-		printf("\n“G%d:", i);
-
-		enemy[i].Print();
-	}
+	delete enemy;
 
 	return 0;
 }
